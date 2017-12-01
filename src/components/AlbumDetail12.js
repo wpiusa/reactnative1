@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, Image, Linking } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 
 //only diplay infor: functional componet
 const AlbumDetail = ({album}) => {
-  const {title,artist,thumbnai_image, image, url} = album;
+  const {title,artist,thumbnai_image, image} = album;
   const {
     thumnailStyle, 
     headerContentStyle,
@@ -36,9 +36,7 @@ const AlbumDetail = ({album}) => {
        </CardSection>
 
        <CardSection>
-         <Button onPress={()=> Linking.openURL(url)}>
-            Buy Now
-         </Button>
+         <Button />
        </CardSection>
      </Card>
 	);

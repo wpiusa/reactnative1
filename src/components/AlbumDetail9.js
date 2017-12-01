@@ -1,18 +1,16 @@
 import React from 'react';
-import { View, Text, Image, Linking } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
-import Button from './Button';
 
 //only diplay infor: functional componet
 const AlbumDetail = ({album}) => {
-  const {title,artist,thumbnai_image, image, url} = album;
+  const {title,artist,thumbnai_image} = album;
   const {
     thumnailStyle, 
     headerContentStyle,
     thumbnailContainerStyle,
-    headerTextStyle,
-    imageStyle
+    headerTextStyle
   } = styles;
 
 	retutn(
@@ -27,18 +25,6 @@ const AlbumDetail = ({album}) => {
 	          <Text style={headerTextStyle}>{title}</Text>
 	          <Text>{artist}</Text>
 	       </View>
-       </CardSection>
-       
-       <CardSection>
-          <Image
-            style={imageStyle} 
-            source={image}/>
-       </CardSection>
-
-       <CardSection>
-         <Button onPress={()=> Linking.openURL(url)}>
-            Buy Now
-         </Button>
        </CardSection>
      </Card>
 	);
@@ -62,11 +48,6 @@ const styles= {
     marginLeft: 10,
     marginRight: 10
   },
-  imageStyle: {
-    height: 300,
-    flex: 1,
-    width: null
-  }
 }
 export default AlbumDetail;
 
